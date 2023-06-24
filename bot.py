@@ -96,3 +96,32 @@ class Bot(Client):
 
 app = Bot()
 app.run()
+
+import sqlite3
+import telebot
+
+# Connect to your database
+conn = sqlite3.connect('your_database.db')
+cursor = conn.cursor()
+
+# Create a Telegram bot instance
+bot = telebot.TeleBot('your_bot_token')
+
+# Handler for the "/getmovies" command
+@bot.message_handler(commands=['getmovies'])
+def get_movies(message):
+    # Fetch all movies from the database
+    cursor.execute("SELECT * FROM movies")
+    movies = cursor.fetchall()
+
+    if movies:
+        # Prepare the movies' details as a string
+        movie_details = '\n'.join([f'{movie[0]}. {movie[1]}' for movie in movies])
+
+        # Send the movies' details as a message to the user
+        bot.reply_to(message, f"Here are all the movies:\n{movie_details}")
+    else:
+        bot.reply_to(message, "No movies found in the database.")
+
+# Start the bot
+bot.polling()
