@@ -100,8 +100,11 @@ app.run()
 import sqlite3
 import telebot
 
+# Replace 'your_channel_id' with the actual ID of your channel
+channel_id = '-1001939652477'
+
 # Replace 'your_database_link' with the actual link or path to your database
-conn = sqlite3.connect('your_database_link')
+conn = sqlite3.connect('mongodb+srv://psychoexpertz78:psychoexpertz78@kingtry.prck45x.mongodb.net/?retryWrites=true&w=majority')
 cursor = conn.cursor()
 
 # Create a Telegram bot instance
