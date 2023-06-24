@@ -100,12 +100,12 @@ app.run()
 import sqlite3
 import telebot
 
-# Connect to your database
-conn = sqlite3.connect('your_database.db')
+# Replace 'your_database_link' with the actual link or path to your database
+conn = sqlite3.connect('your_database_link')
 cursor = conn.cursor()
 
 # Create a Telegram bot instance
-bot = telebot.TeleBot('your_bot_token')
+bot = telebot.TeleBot('5621047664:AAHFZPz2lGFzUC6gzKZJHiR7syXw_wfCtu8')
 
 # Handler for the "/getmovies" command
 @bot.message_handler(commands=['getmovies'])
