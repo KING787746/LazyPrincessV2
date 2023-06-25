@@ -11,5 +11,5 @@ heroku3
 pynewtonmath
 pytz
 aiohttp
-pip install sqlite3
-pip install pyTelegramBotAPI
+sqlite3
+pyTelegramBotAPI
