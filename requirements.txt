@@ -11,5 +11,4 @@ heroku3
 pynewtonmath
 pytz
 aiohttp
-sqlite3
 pyTelegramBotAPI
